@@ -384,3 +384,27 @@ body {
   transform: scale(1.2);
   filter: brightness(1.2) drop-shadow(0 2px 8px #ffffff);
 }
+
+/* Add to your CSS file */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: currentColor;
+  transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+  width: 100%;
+}
